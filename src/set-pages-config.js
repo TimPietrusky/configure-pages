@@ -31,8 +31,10 @@ function getConfigParserSettings({ staticSiteGenerator, generatorConfigFile, sit
         configurationFile: generatorConfigFile || './next.config.js',
         blankConfigurationFile: `${__dirname}/blank-configurations/next.js`,
         properties: {
-          // Configure a base path
-          basePath: path,
+          // Disable base path as this is breaking the paths
+          // when having a custom URL pointing directly to the repo
+          // and the resources should be delivered from / instead of /path
+          // basePath: path,
 
           // Disable server side image optimization too
           // https://nextjs.org/docs/api-reference/next/image#unoptimized
